@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i%7CIndie+Flower" media="all" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slide.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css') }}"/>
+
+        <title>Document</title>
+    </head>
+<body>
+          <header>
+            <a class="logo" href="#acasa"><img src="{{ url_for('static', filename='img/logo.png') }}"></a>
+
+            <div id="load">
+            <div id="fountainG"> 
+
+                <div id="fountainG_1" class="fountainG"></div> 
+                
+                <div id="fountainG_2" class="fountainG"></div> 
+                
+                <div id="fountainG_3" class="fountainG"></div> 
+                
+                <div id="fountainG_4" class="fountainG"></div> 
+                
+                <div id="fountainG_5" class="fountainG"></div> 
+                
+                <div id="fountainG_6" class="fountainG"></div> 
+                
+                <div id="fountainG_7" class="fountainG"></div> 
+                
+                <div id="fountainG_8" class="fountainG"></div> 
+                <div id="fountainG_9" class="fountainG"></div> 
+                <div id="fountainG_10" class="fountainG"></div> 
+            </div>
+        </div>
+                </div> 
+               
+      </a>
+      <nav class="navigation">
+        <a href="{{ url_for('home') }}"><button class="navigation-menu-button">Acasa</button></a>
+        <a href="{{ url_for('planuri') }}"><button class="navigation-menu-button">Planuri de investitii </button></a>
+        <a href="{{ url_for('pasi') }}"><button class="navigation-menu-button">Pasi de urmat </button></a>
+        <a href="{{ url_for('intrebari') }}"><button class="navigation-menu-button">Intrebari frecvente </button></a>
+        <a href="#"><button class="navigation-menu-button">Contact </button></a>  
+        <a href="{{ url_for('politica') }}"><button class="navigation-menu-button">Politica de confidentialitate </button></a>  
+      </nav>
+  </header>
+  <section id="acasa">
+  <!-- Slideshow container -->
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+  <div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="fade-first"><p>Hello </p></div>
+    <div class="fade-second"><p>world</p></div>
+    <div class="fade-excl"><p>!</p></div>
+    
+   <img src="{{ url_for('static', filename='img/banner.jpg') }}" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="fade-first"><p>Hello </p></div>
+    <div class="fade-second"><p>world</p></div>
+    <div class="fade-excl"><p>!</p></div>
+    
+    <img src="{{ url_for('static', filename='img/banner1.png') }}" style="width:100%; height: 950px">
+  
+  </div>
+  </div>
+  <br>
+  </body>
+  </html> 
+  
+  </section>
+<div class="space"></div>
+  <!--Contact page-->
+  <div id="contact">
+
+    <div class="contact-det">
+      <div class="fa-address">
+        <i class="fa fa-address-card-o" style="font-size:48px;color:rgb(0, 0, 0)"></i>
+    </div>
+      <h1> Name</h1>
+        <p>Marius Parau</p>
+        <h1>Numar de telefon</h1>
+        <p>09024093249</p>
+        <h1>Adresa de email</h1>
+        <p>adresa@gmail.com</p>
+      </div>
+      <div class="contact-page">
+          <div class="contact-form">
+        <form action="script/email.php" method="POST">
+          <label for="first-name"></label>
+          <input type="text" id="first-name" name="firstname" placeholder="Prenume">
+          <br>
+          <label for="last-name"></label>
+          <input type="text" id="last-name" name="lastname" placeholder="Nume">
+          <br>
+          <label for="email"></label>
+          <input type="text" id="email" name="email" placeholder="Adresa ta de email.">
+    
+          <br>
+          <label for="country"></label>
+          <select id="country" name="country">
+              <option value="Romania">Romania</option>
+              <option value="outside">Alta Tara</option>
+          <br>
+          <label for="subject"></label>
+        <textarea id="subject" name="subject" placeholder="Scrie-ne ceva.." style="height:200px"></textarea>
+        
+          <br>
+          <input type="submit" value="Trimite">
+          <br>
+        </form>
+      </div>
+      </div>
+      </div>
+    </div>
+    <!--Contact page END-->
+  <div class="space"></div>
+<footer>
+
+    <div class="footer_link">
+        <a href="#proiecte" ><div class="footer-button fa fa-facebook-square"> Facebook</div></a></i>
+        <a href="#proiecte"><div class="footer-button fa fa-instagram"> Instagram</div></a></i>
+        <a href="#proiecte"><div class="footer-button fa fa-envelope"> Mail</div></a></i>
+    </div>
+    <div class="copywrite"><p>Copywrite <i class="fa fa-copyright copywright"> Zerka Design </i></p></div>
+
+</footer>
+
+</select>
+    <script src="{{ url_for('static', filename='script/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/slide.js') }}"></script>
+</body>
+</html>
+
+
