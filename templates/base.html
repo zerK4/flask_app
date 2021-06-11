@@ -16,7 +16,7 @@
 </head>
 <body>
     <header>
-        <a class="logo" href="#acasa"><img src="{{ url_for('static', filename='img/logo.png') }}"></a>
+        <a class="logo" href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='img/logo.png') }}"></a>
 
         <div id="load">
         <div id="fountainG"> 
@@ -41,14 +41,16 @@
         </div>
     </div>
             </div> 
-           
-  </a>
+            
+  
+
   <nav class="navigation">
-    <a href="#"><button class="navigation-menu-button">Acasa</button></a>
+
+    <a href="{{ url_for('home') }}"><button class="navigation-menu-button">Acasa</button></a>
     <a href="{{ url_for('planuri') }}"><button class="navigation-menu-button">Planuri de investitii </button></a>
     <a href="{{ url_for('pasi') }}"><button class="navigation-menu-button">Pasi de urmat </button></a>
     <a href="{{ url_for('intrebari') }}"><button class="navigation-menu-button">Intrebari frecvente </button></a>
-    <a href="{{ url_for('contact') }}"><button class="navigation-menu-button">Contact </button></a>  
+    <a href="{{ url_for('form') }}"><button class="navigation-menu-button">Contact </button></a>  
     <a href="{{ url_for('politica') }}"><button class="navigation-menu-button">Politica de confidentialitate </button></a>  
   </nav>
 </header>
@@ -62,14 +64,15 @@
 
 <div class="slideshow-container">
 <div class="mySlides fade">
-<div class="fade-first-page"><h1>We are a creative design company.</h1></div>
+<div class="fade-first-page">        {% block flash %} {% endblock %}
+<h1>We are a creative design company.</h1></div>
 <div class="fade-second-fpage"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
   Nunc vel felis velit. Vivamus pulvinar ligula velit, ac ornare lorem molestie non. <br>
   Donec ac fermentum tellus, in convallis nunc. Nulla imperdiet urna nec nibh venenatis, 
   vitae suscipit orci lobortis. Proin ornare enim tortor, quis auctor nisi fermentum ut. 
   Quisque feugiat orci quis felis venenatis, vitae blandit enim vehicula. </p></div>
-  <a href="#"><button class="fpb-despre">Despre</button></a>
-  <a href="#"><button class="fpb-planuri">Planuri</button></a>
+  <a href="{{ url_for('.home', _anchor='about-us') }}"><button class="fpb-despre">Despre</button></a>
+  <a href="{{ url_for('.home', _anchor='specialization') }}"><button class="fpb-planuri">Planuri</button></a>
 
 <img src="{{ url_for('static', filename='img/banner.jpg') }}" style="width:100%">
 </div>
@@ -82,100 +85,23 @@
 <img src="{{ url_for('static', filename='img/banner1.png') }}" style="width:100%; height: 1000px">
 
 </div>
+</div>
 
 <br>
+{% block content %}
 
-<div class="space"></div>
-<!--About us-->
-<div class="about-main">
-<h1> About Us</h1>
-<hr class="border-about-us">
-<br>
-<p>Our Development agency is committed to providing you the&nbsp;<b>best service.l</b></p>
-<div class="about-main-3">
-
-    <div class="about-1">
-        <div class="about-1-fa">
-            <i class="fa fa-globe" style="font-size:100px;color:cyan"></i>
-        </div>
-        <h1>Lorem Ipsum</h1><br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Proin et nulla in dolor mattis finibus. Phasellus ut laoreet justo.</p>
-    </div>
-    <div class="about-2">
-        <div class="about-2-fa"><i class="fa fa-thumbs-o-up" style="font-size:100px;color:whitesmoke"></i></div>
-        <h1>Lorem Ipsum</h1><br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Proin et nulla in dolor mattis finibus. Phasellus ut laoreet justo.</p>
-    </div>
-    <div class="about-3">
-        <div class="about-2-fa"><i class="fa fa-compass" style="font-size:100px;color:cyan"></i></div>
-        <h1>Lorem Ipsum</h1><br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Proin et nulla in dolor mattis finibus. Phasellus ut laoreet justo.</p>
-    </div>
-</div>
-</div>
-
-<div class="specialize-text">
-<h1>We specialize in</h1>
-</div>
-<div class="specialize">
-
-<div class="specialize-all">
-<i class="fa fa-heart-o" style="font-size:100px;color:black"></i>
-<h1>Lorem Ipsum</h1><br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Proin et nulla in dolor mattis finibus. Phasellus ut laoreet justo.</p>
-</div>
-<div class="specialize-all">
-<i class="fa fa-birthday-cake" style="font-size:100px;color:black"></i>
-<h1>Lorem Ipsum</h1><br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Proin et nulla in dolor mattis finibus. Phasellus ut laoreet justo.</p>
-</div>
-<div class="specialize-all">
-<i class="fa fa-code" style="font-size:100px;color:black"></i>
-<h1>Lorem Ipsum</h1><br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Proin et nulla in dolor mattis finibus. Phasellus ut laoreet justo.</p>
-</div>
-<div class="specialize-all">
-<i class="fa fa-shopping-bag" style="font-size:100px;color:black"></i>
-<h1>Lorem Ipsum</h1><br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Proin et nulla in dolor mattis finibus. Phasellus ut laoreet justo.</p>
-</div>
-<div class="specialize-all">
-<i class="fa fa-diamond" style="font-size:100px;color:black"></i>
-<h1>Lorem Ipsum</h1><br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Proin et nulla in dolor mattis finibus. Phasellus ut laoreet justo.</p>
-</div>
-<div class="specialize-all">
-<i class="fa fa-glass" style="font-size:100px;color:black"></i>
-<h1>Lorem Ipsum</h1><br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Proin et nulla in dolor mattis finibus. Phasellus ut laoreet justo.</p>
-</div>
-</div>
-
-<div class="space"></div>
-<!--About us end-->
-
+{% endblock %}
 
 <footer>
-<div class="footer_link">
-    <a href="#proiecte" ><div class="footer-button fa fa-facebook-square"> Facebook</div></a></i>
-    <a href="#proiecte"><div class="footer-button fa fa-instagram"> Instagram</div></a></i>
-    <a href="#proiecte"><div class="footer-button fa fa-envelope"> Mail</div></a></i>
-</div>
-<div class="copywrite"><p>Copywrite <i class="fa fa-copyright copywright"> Zerka Design </i></p></div>
-
+    <div class="footer_link">
+        <a href="#proiecte" ><div class="footer-button fa fa-facebook-square"> Facebook</div></a></i>
+        <a href="#proiecte"><div class="footer-button fa fa-instagram"> Instagram</div></a></i>
+        <a href="#proiecte"><div class="footer-button fa fa-envelope"> Mail</div></a></i>
+    </div>
+    <div class="copywrite"><p>Copywrite <i class="fa fa-copyright copywright"> Zerka Design </i></p></div>
 </footer>
-    {% block content %}
-    {% endblock %}
-    <script src="{{ url_for('static', filename='script/script.js') }}"></script>
-    <script src="{{ url_for('static', filename='script/slide.js') }}"></script>
+
+<script src="{{ url_for('static', filename='script/script.js') }}"></script>
+<script src="{{ url_for('static', filename='script/slide.js') }}"></script>
 </body>
 </html>

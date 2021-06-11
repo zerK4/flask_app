@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %} Contact {% endblock %}
+{% block content %}
+<body>
+
+ <!-- {% block flash %}
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+     {% for message in messages %}
+        {{ message }}
+     {% endfor %}
+  {% endif %}
+{% endwith %}
+  {% endblock %}
+-->
+<div class="space"></div>
+  <!--Contact page-->
+  <div id="contact">
+
+    <div class="contact-det">
+      <div class="fa-address">
+        <i class="fa fa-address-card-o" style="font-size:48px;color:rgb(0, 0, 0)"></i>
+    </div>
+      <h1> Name</h1>
+        <p>Sebastian Vacarita</p>
+        <h1>Numar de telefon</h1>
+        <p>0747942342</p>
+        <h1>Adresa de email</h1>
+        <p>sebastian.vacarita@gmail.com</p>
+      </div>
+      <div class="contact-page">
+          <div class="contact-form">
+          <form method="POST" action="{{ url_for('form') }}">
+          {{ form.csrf_token }}
+          {{ form.name(class_="form-input") }}
+          
+          {{ form.email(class_="form-input") }}
+    
+          {{ form.phone(class_="form-input") }}
+  
+          {{ form.subject(class_="form-input") }}
+
+          {{ form.message(class_="form-input") }}
+<br>
+          {{ form.submit(class_="button-form") }} 
+        </form>
+
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}
+
+
+
