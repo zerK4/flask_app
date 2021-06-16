@@ -16,8 +16,8 @@ app.config.update(
     MAIL_PORT = 25,
     MAIL_USE_TLS = True,
     MAIL_USE_SSL = False,
-    MAIL_USERNAME = 'sebastian.vacarita@gmail.com',
-    MAIL_PASSWORD = 'Break.d0own!@'
+    MAIL_USERNAME = '***',
+    MAIL_PASSWORD = '***'
 )
 mail = Mail(app)
 
